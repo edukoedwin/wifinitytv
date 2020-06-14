@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 a {
   color: #00B7FF;
+}
+.card{
+ min-height:450px;
+}
+.image{
+  height: 448px !important;
+  width:538 !important ;
+}
+.middleImage{
+  height:450px !important ;
 }

@@ -1,14 +1,61 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img src="/images/wifinity-NEWW.png"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="/stream">Stream Now </a>
-        <a class="nav-item nav-link" href="/getApp">Get App</a>
-        <a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Sign in</a>
-      </div>
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+                <a class="navbar-brand" href="#home"><img src="/images/wifinity-NEWW.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+          
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item navLink">
+                      <a class="nav-link " href="/">HOME </a>
+                    </li>
+                    <li class="nav-item  navLink">
+                      <a class="nav-link" href="/stream">STREAM NOW</a>
+                    </li>
+                    <li class="nav-item navLink">
+                        <a class="nav-link" href="/getapp">GETAPP</a>
+                      </li>
+                    
+                    <li class="nav-item ">
+                        <input type="submit" class="btn btn-block nav-link"  data-toggle="modal" data-target="#myModal" value="LOGIN">
+                    </li>
+                    <li class="nav-item"><a href="#" class="btn btn-primary mt-1 mb-1">Get Started</a></li>
+                  </ul>
+                  
+                </div>
+              </nav>
+        </div>
     </div>
-  </nav>
+</div>
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">				
+				<h4 class="modal-title">Member Login</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form action="/examples/actions/confirmation.php" method="post">
+					<div class="form-group">
+						<i class="fa fa-user"></i>
+						<input type="text" class="form-control" placeholder="Username" required="required">
+					</div>
+					<div class="form-group">
+						<i class="fa fa-lock"></i>
+						<input type="password" class="form-control" placeholder="Password" required="required">					
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+					</div>
+				</form>				
+				
+			</div>
+			<div class="modal-footer">
+				<a href="#">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>

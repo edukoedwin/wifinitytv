@@ -12,7 +12,7 @@ module.exports.register=(req,res)=>{
         res.json({
             status:false,
             message:'there are some error with query',
-            error:error
+            error
         })
       }else{
           res.json({

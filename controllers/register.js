@@ -9,7 +9,7 @@ module.exports.register=(req,res)=>{
     
     connection.query(`INSERT INTO users (firstName,lastName,password,email,phone) values('${firstname}','${lastname}','${hash}','${email}','${phone}')`,(error, results, fields)=> {
       const{email}= req.body
-    const user=connection.query(`select * from users where email = '${email}'`, )
+    const user=connection.query(`select * from users where email = '${email}'`)
         if (user){
         return res.status(403).json({
             error: "email is already taken Login!"

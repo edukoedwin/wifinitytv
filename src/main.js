@@ -2,10 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import vueRouter from 'vue-router'
+import vueWindowSize from 'vue-window-size'
 import Routes from './routes'
 
 //added modules
 Vue.use(vueRouter)
+Vue.use(vueWindowSize)
 const router=new vueRouter({
   routes:Routes
 })

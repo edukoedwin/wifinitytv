@@ -59,87 +59,56 @@
     </v-container>
 
     <!-- pricing -->
-    <v-row class="rate-cards" :justify="justify">
-      <v-container class="mt-80">
-        <v-slide-group
+    <div class="rate-cards">
+     <v-sheet
+      class="d-flex justify-center sheet"
+      elevation=""
+      max-width="100%"
+      color="#EEEEF1"
+    >
+      <v-slide-group
         v-model="model"
         class="pa-4"
-        :prev-icon="true ? 'mdi-minus' : undefined"
-        :next-icon="true ? 'mdi-plus' : undefined"
-        :multiple="multiple"
         :mandatory="mandatory"
-        :show-arrows="true"
-
-
+        :show-arrows="false"
+  
       >
         <v-slide-item
           v-for="n in 4"
           :key="n"
-          
+       
         >
           <v-card
-            :color="active ? 'primary' : 'grey lighten-1'"
-            class="ma-4"
-           
-          >
-            <v-img
-            :src="require('../assets/wifinity/Ratecardbasic.svg')"
             
-            ></v-img>
+            class="ma-4"
+            :width=cardWidth
+            @click="toggle"
+          >
+          <v-img
+          :src="require('../assets/wifinity/Ratecardvip.svg')"
+          ></v-img>
           </v-card>
         </v-slide-item>
       </v-slide-group>
-      </v-container>
-    </v-row>
+    </v-sheet>
+    Every subscription includes
+    </div> 
     <!--tabs for wifinity features -->
-    <v-row
-    
-    >
-      <v-tabs
-      v-model="tab"
-      background-color="deep-purple accent-4"
-      class="elevation-2"
-      dark
-      :centered="centered"
-      :grow="grow"
-      :vertical="true"
-      :right="right"
-      :prev-icon="prevIcon ? 'mdi-arrow-left-bold-box-outline' : undefined"
-      :next-icon="nextIcon ? 'mdi-arrow-right-bold-box-outline' : undefined"
-      :icons-and-text="icons"
-      
-    >
-      <v-tabs-slider></v-tabs-slider>
-
-      <v-tab
-        v-for="i in tabs"
-        :key="i"
-        :href="`#tab-${i}`"
-      >
-        Tab {{ i }}
-        <v-icon v-if="icons">mdi-phone</v-icon>
-      </v-tab>
-
-      <v-tab-item
-        v-for="i in tabs"
-        :key="i"
-        :value="'tab-' + i"
-      >
-        <v-card
-          flat
-          tile
-        >
-          <v-card-text>{{ text }}</v-card-text>
-        </v-card>
-      </v-tab-item>
-    </v-tabs>
-    </v-row>
+   <div class="features">
+   <v-img
+   height=""
+   width=""
+   :src="require('../assets/wifinity/happyCouple.svg')"
+   ></v-img>
+   </div>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+        cardWidth:200,
+        screensize:0,
         tab: null,
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         icons: true,
@@ -164,7 +133,28 @@ export default {
         }
       ]
     };
+  },
+  created() {
+    window.addEventListener('resize',this.myEventHandler)
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.myEventHandler);
+
+  },
+
+  methods:{
+    myEventHandler(e) {
+      console.log(e)
+      const width=window.innerWidth
+      if(width<768) {
+        this.cardWidth=150
+
+      }
+      else this.cardWidth=200
+      
+    }
   }
+
 };
 </script>
 <style lang="stylus">
@@ -182,14 +172,21 @@ export default {
 .wifinity-card, .overlay {
   background-color: rgba(8, 45, 114, 0.5);
   height: 100%;
-}
-
-.rate-cards {
-  background: #EEEEF1;
-  height: 400px;
-}
-
-.rate-card {
-    height px
-}
+} 
+.rate-cards
+     height 300px
+     width 100%
+     background-color #EEEEF1
+     position relative
+.sheet
+    position absolute 
+    top 70px
+    width 100%
+.features
+   position relative
+   width 100%
+   max-height 300px
+   margin-top 20px
+   
+   
 </style>

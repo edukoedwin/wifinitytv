@@ -16,9 +16,7 @@
         />
         <div class="tabs">
             <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#home">Stream Now</a></li>
-            <li><a href="#home">Get App</a></li>
+        
             </ul>
  
             

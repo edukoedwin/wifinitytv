@@ -1,4 +1,5 @@
 import navbar from './components/nav.vue'
+import checkout from './components/checkout.vue'
 //import helloworld from './components/HelloWorld.vue'
 import home from './components/Home.vue'
 export default[
@@ -8,5 +9,9 @@ export default[
     {
         path:"/",
         component:home
-    }
+    },
+    {
+      path:"/checkout",
+      component:checkout
+  }
 ]
